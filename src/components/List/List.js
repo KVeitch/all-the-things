@@ -3,11 +3,11 @@ import './List.css'
 import ListItem from '../ListItem/ListItem'
 
 const List = ({data}) => {
-  const {title, list} = data;
-  const mappedListItems = list.map((item,i)=><ListItem item={item} key={`${title}${i}`}/>)
+  const {title, tasks} = data;
+  const mappedListItems = tasks.map((item,i)=><ListItem item={item} key={`${title}${i}`}/>)
   return (
     <div className="card__list">
-      <h3>{title}</h3>
+      <h3 className="card__title">{title}</h3>
       <ul>
       {mappedListItems}
       </ul>
