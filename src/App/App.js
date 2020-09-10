@@ -12,7 +12,7 @@ class App extends Component{
       lists:[
         {
           title:'There is a title',
-          list:["one","two"]
+          tasks:["one","two"]
         }
       ]
     }
@@ -30,7 +30,7 @@ class App extends Component{
       <div className="full-container">
         <div className="App">
           <Header />
-          <Form />
+          <Form createCard={this.createCard}/>
           <ListContainer lists={this.state.lists}/>
         </div>
       </div>
