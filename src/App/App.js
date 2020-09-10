@@ -8,12 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lists: [
-        {
-          title: "There is a title",
-          tasks: ["one", "two"],
-        },
-      ],
+      lists: [],
     };
   }
 
