@@ -1,12 +1,22 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './Form.css'
 
-const Form = () => {
-  return (
-    <div>
-      <h1>Form working</h1>
-    </div>
-  )
+class Form extends Component {
+  constructor(){
+    super();
+    this.state={
+
+    }
+  }
+
+  render(){
+
+    return (
+      <div className="form">
+        <h1>Form working</h1>
+      </div>
+    )
+  }
 }
 
 export default Form
