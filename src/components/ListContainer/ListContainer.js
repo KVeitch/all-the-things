@@ -8,12 +8,10 @@ const ListContainer = ({ lists, removeCard,removeCardClick }) => {
   ));
 
   return (
-    <>
       <div className="list-container">
         <h1>Your Things</h1>
         <div className="lists">{mappedLists}</div>
       </div>
-    </>
   );
 };
 
