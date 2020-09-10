@@ -1,11 +1,11 @@
 import React from 'react'
 import './ListItem.css'
 
-const ListItem = () => {
+const ListItem = ({item}) => {
   return (
-    <div>
-      <h1>ListItem Working</h1>
-    </div>
+    <li>
+      {item}
+    </li>
   )
 }
 

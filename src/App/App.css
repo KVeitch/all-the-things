@@ -60,18 +60,33 @@ header {
   background:var(--container-bg-color)
 }
 
-
 .add-task-btn {
   height:1.2em
 }
 
 ul {
   list-style-type: none;
+  padding-left:.4em;
+}
+
+.form > input , .form  > button {
+  font-size: 1em;
+  height:2em;
+  padding:.2em;
+  border-radius:.2em;
+  border:0;
+  margin:.2em 0 .4em;
 }
 
 input:focus, button:focus{
   outline: none;
-  border:2px solid var(--highlight-color)
+  -webkit-box-shadow: 0px 0px 0px 3px var(--highlight-color);
+  -moz-box-shadow: 0px 0px 0px 3px var(--highlight-color);
+  box-shadow: 0px 0px 0px 3px var(--highlight-color);
+}
+
+.card__list {
+  background: white;
 }
 
 

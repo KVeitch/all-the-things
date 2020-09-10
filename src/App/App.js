@@ -9,9 +9,21 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      lists:[]
+      lists:[
+        {
+          title:'There is a title',
+          list:["one","two"]
+        }
+      ]
     }
   };
+
+
+  createCard=(card)=>{
+    this.setState({lists:[...this.state.lists, card ]})
+  }
+
+
   render(){
 
     return (
@@ -19,7 +31,7 @@ class App extends Component{
         <div className="App">
           <Header />
           <Form />
-          <ListContainer list={this.state.lists}/>
+          <ListContainer lists={this.state.lists}/>
         </div>
       </div>
     );

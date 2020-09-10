@@ -2,11 +2,14 @@ import React from 'react'
 import List from '../List/List'
 import './ListContainer.css'
 
-const ListContainer = () => {
+const ListContainer = ({lists}) => {
+
+  const mappedLists = lists.map((list, i)=><List data={list} key={`list${i}`}/>)
+
   return (
-    <div>
-      <h1>ListContainer is Working</h1>
-      <List />
+    <div className="list-container">
+      <h1>Your Things</h1>
+      {mappedLists}
     </div>
   )
 }
