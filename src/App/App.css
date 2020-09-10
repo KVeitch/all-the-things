@@ -69,7 +69,10 @@ ul {
   list-style-type: none;
 }
 
-
+input:focus, button:focus{
+  outline: none;
+  border:2px solid var(--highlight-color)
+}
 
 
 
@@ -95,5 +98,8 @@ ul {
       'header'
       'form'
       'lists';
+  }
+  .form {
+    height:100%;
   }
 }
