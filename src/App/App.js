@@ -19,11 +19,19 @@ class App extends Component {
   removeCard = (event) => {
     if (event.key === "Delete" || event.key === "Backspace") {
       const index = event.target.dataset.index;
-      const results = this.state.lists.filter((list, i) => i != index);
+      const results = this.state.lists.filter((list, i) => i !== parseInt(index));
       this.setState({
         lists: results,
       });
     }
+  };
+
+  removeCardClick = (event) => {
+    const index = event.target.dataset.index;
+    const results = this.state.lists.filter((list, i) => i !== parseInt(index));
+    this.setState({
+      lists: results,
+    });
   };
 
   render() {
@@ -35,6 +43,7 @@ class App extends Component {
           <ListContainer
             lists={this.state.lists}
             removeCard={this.removeCard}
+            removeCardClick={this.removeCardClick}
           />
         </div>
       </div>

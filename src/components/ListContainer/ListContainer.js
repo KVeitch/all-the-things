@@ -2,9 +2,9 @@ import React from "react";
 import List from "../List/List";
 import "./ListContainer.css";
 
-const ListContainer = ({ lists, removeCard }) => {
+const ListContainer = ({ lists, removeCard,removeCardClick }) => {
   const mappedLists = lists.map((list, i) => (
-    <List data={list} index={i} key={`list${i}`} removeCard={removeCard} />
+    <List data={list} index={i} key={`list${i}`} removeCard={removeCard} removeCardClick={removeCardClick}/>
   ));
 
   return (
