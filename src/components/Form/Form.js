@@ -1,42 +1,55 @@
-import React, {Component} from 'react'
-import './Form.css'
-import FormListItem from '../FormListItem/FormListItem'
+import React, { Component } from "react";
+import "./Form.css";
+import FormListItem from "../FormListItem/FormListItem";
 
 class Form extends Component {
   constructor() {
     super();
     this.state = {
       title: "",
-      taskText:'',
-      tasks: ["bob", "susas"],
+      taskText: "",
+      tasks: [],
     };
-    // this.focus = this.focus.bind(this)
   }
 
   handleChange = (event) => {
-    console.log(event.target)
     this.setState({ [event.target.name]: event.target.value });
   };
 
   handleTitleEnter = (event) => {
     if (event.keyCode === 13) {
-      this.myInp.focus()
+      this.listInput.focus();
     }
   };
 
-  handleTaskEnter = (event) =>{
+  handleTaskEnter = (event) => {
     if (event.keyCode === 13) {
       this.setState({
-        tasks:[...this.state.tasks, event.target.value],
-        taskText:''
-      })
-      this.myInp.focus()
-    } 
+        tasks: [...this.state.tasks, event.target.value],
+        taskText: "",
+      });
+      this.listInput.focus();
+    }
+  };
+
+  handleSubmit = ()=>{
+    const{title,tasks} =this.state
+    const card = {
+      title,
+      tasks
+    }  
+    this.props.createCard(card)
+    this.setState({
+      tasks: [],
+      taskText: "",
+      title:""
+    })
+    this.titleInput.focus();
   }
 
   render() {
-    const { tasks, taskText,  title } = this.state;
-    
+    const { tasks, taskText, title } = this.state;
+
     const formItems = tasks.map((text, i) => (
       <FormListItem text={text} key={`formItem${i}`} />
     ));
@@ -50,24 +63,25 @@ class Form extends Component {
           placeholder="Title"
           value={title}
           autoFocus={true}
+          ref={(ip) => (this.titleInput = ip)}
           onChange={this.handleChange}
           onKeyDown={this.handleTitleEnter}
         />
         <p>Task Items</p>
         <ul className="list__container">{formItems}</ul>
-        <input 
+        <input
           type="text"
           placeholder="Task Item"
           name="taskText"
           value={taskText}
-          ref={(ip) => this.myInp = ip}
+          ref={(ip) => (this.listInput = ip)}
           onChange={this.handleChange}
           onKeyDown={this.handleTaskEnter}
         />
-        <button type="button">Make the thing</button>
+        <button type="button" onClick={this.handleSubmit} >Make the thing</button>
       </div>
     );
   }
 }
 
-export default Form
+export default Form;
