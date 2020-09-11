@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## All-The-Things
 
-## Available Scripts
+## [Live Site](https://kveitch.github.io/all-the-things/)
 
-In the project directory, you can run:
+All-The-Things is a quick app built for Mintbean's September hackathon, Open Hack: No Mice.  
 
-### `yarn start`
+### The Stack
+[React.js  ](https://reactjs.org/)    
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<hr>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## How to use the App
+Go to the [live Site](https://kveitch.github.io/all-the-things/) hosted on GitHub.  The web address will contain a unique identifier for your chat room.  Copy the web address and send it to a friend.  When the URL is opened, your friend will be automatically added to your chat room.
 
-### `yarn test`
+<hr>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## From the app
+(Click to view)
+<details>
+  <summary>Desktop views</summary> 
 
-### `yarn build`
+![](./DOCS/desktop.jpg)
+</details>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary>Mobile view</summary> 
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![](./DOCS/mobile.jpg)
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<hr>
 
-### `yarn eject`
+### Future improvement
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Add the ability to edit the tasks and the list.  
+Add the ability to check off items in the sub-lists.  
+Utilize local storage so list persist after reloading page.  
