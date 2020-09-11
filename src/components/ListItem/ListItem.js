@@ -1,12 +1,8 @@
-import React from 'react'
-import './ListItem.css'
+import React from "react";
+import "./ListItem.css";
 
-const ListItem = ({item}) => {
-  return (
-    <li>
-      {item}
-    </li>
-  )
-}
+const ListItem = ({ item }) => {
+  return <li>{item}</li>;
+};
 
-export default ListItem
+export default ListItem;

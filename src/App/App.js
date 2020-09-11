@@ -19,7 +19,9 @@ class App extends Component {
   removeCard = (event) => {
     if (event.key === "Delete" || event.key === "Backspace") {
       const index = event.target.dataset.index;
-      const results = this.state.lists.filter((list, i) => i !== parseInt(index));
+      const results = this.state.lists.filter(
+        (list, i) => i !== parseInt(index)
+      );
       this.setState({
         lists: results,
       });
