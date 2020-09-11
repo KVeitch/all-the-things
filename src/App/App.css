@@ -86,6 +86,11 @@ ul {
   margin: 0.2em 0 0.4em;
 }
 
+.form > button {
+  width: 100%;
+  text-align: left;
+}
+
 .input__container {
   display: flex;
   align-items: center;
@@ -114,7 +119,7 @@ button:focus,
 
 .card__list {
   transition: all 0.2s ease-in-out;
-  color:var(--secondary-text-color)
+  color: var(--secondary-text-color);
 }
 
 .card__list:focus {
@@ -154,29 +159,31 @@ button:focus,
     width: 100vh;
     display: grid;
     grid-template-areas:
-    "header"
-    "form"
-    "lists";
+      "header"
+      "form"
+      "lists";
     grid-template-columns: auto;
     grid-template-rows: 4em 15em auto;
   }
-  input::placeholder{
+  input::placeholder {
     text-align: center;
   }
   .form {
     height: 100%;
   }
 
-  .form__input{
-    width:100%
+  .form__input {
+    width: 100%;
   }
 
   .input__container {
-    width:calc(100% + 2em)
+    width: calc(100% + 2em);
   }
 
-  .form__input, .form > button{
-    width:100%;
+  .form__input,
+  .form > button {
+    width: 100%;
+    text-align: center;
   }
 
   .card__list {
@@ -185,10 +192,8 @@ button:focus,
   .list-container {
     height: 100%;
   }
-  .form >p {
+  .form > p {
     font-size: 1.2em;
     text-align: center;
   }
-
-
 }
