@@ -1,11 +1,10 @@
 :root {
-  --header-bg-color:#74b9ff;
+  --header-bg-color: #74b9ff;
   --container-bg-color: #dfe6e9;
   --secondary-bg-color: #b2bec3;
   --secondary-text-color: #3e4346;
-  --highlight-color:#fdcb6e;
+  --highlight-color: #fdcb6e;
 }
-
 
 * {
   margin: 0;
@@ -17,127 +16,149 @@
   margin: top 1.5em;
 }
 
-body{
-  background:var(--secondary-bg-color)
+body {
+  background: var(--secondary-bg-color);
 }
 .full-container {
   width: 100vw;
   height: 100vh;
-  background:var(--secondary-bg-color);
-  display:flex;
+  background: var(--secondary-bg-color);
+  display: flex;
   justify-content: center;
 }
 
 .App {
   background: white;
   max-width: 1980px;
-  width:80%;
+  width: 80%;
   display: grid;
   grid-template-columns: 250px auto;
   grid-template-rows: 4em auto;
   grid-template-areas:
-    'header header'
-    'form lists';
+    "header header"
+    "form lists";
 }
 
 header {
   grid-area: header;
-  background:var(--header-bg-color);
-  Color:white;
-  height:4em;
-  padding: .5em 2em .5em 1em;
-  display:flex;
+  background: var(--header-bg-color);
+  color: white;
+  height: 4em;
+  padding: 0.5em 2em 0.5em 1em;
+  display: flex;
   align-items: center;
 }
 
 .form {
   grid-area: form;
-  background:var(--header-bg-color);
-  color:white;
-  height:calc(100vh - 4em);
-  padding: .5em 2em .5em 1em;
+  background: var(--header-bg-color);
+  color: white;
+  height: calc(100vh - 4em);
+  padding: 0.5em 2em 0.5em 1em;
 }
 
 .list-container {
   grid-area: lists;
-  height:calc(100vh - 4em);
-  padding: .5em 2em .5em 1em;
-  background:var(--container-bg-color)
+  height: calc(100vh - 4em);
+  padding: 0.5em 2em 0.5em 1em;
+  background: var(--container-bg-color);
 }
 
 .add-task-btn {
-  height:1.2em
+  height: 1.2em;
 }
 
 ul {
   list-style-type: none;
-  padding-left:.4em;
+  padding-left: 0.4em;
 }
 
-.form > input , .form  > button {
+.form__input,
+.form > button {
   font-size: 1em;
-  height:2em;
-  padding:.2em;
-  border-radius:.2em;
-  border:0;
-  margin:.2em 0 .4em;
+  height: 2em;
+  padding: 0.2em;
+  border-radius: 0.2em;
+  border: 0;
+  margin: 0.2em 0 0.4em;
 }
 
-input:focus, button:focus, .card__list:focus{
+.input__container{
+  display:flex;
+  align-items: center;
+  width:200px;
+}
+
+.input__container > input {
+  margin: 0.2em 0 0.2em;
+}
+
+.add__icon{
+  position: relative;
+  transform: translateX(-100%);
+  height:2em;
+  border-left:1px solid var(--header-bg-color)
+}
+
+input:focus,
+button:focus,
+.card__list:focus {
   outline: none;
   -webkit-box-shadow: 0px 0px 0px 3px var(--highlight-color);
   -moz-box-shadow: 0px 0px 0px 3px var(--highlight-color);
   box-shadow: 0px 0px 0px 3px var(--highlight-color);
 }
 
-.lists{
-  display:flex;
-  flex-wrap:wrap;
+.lists {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .card__list {
   background: white;
-  width:15em;
-  align-self:flex-start;
-  border-radius:.2em;
-  border:2px solid var(--secondary-bg-color);
-  margin:.5em;
-  padding:.1em;
+  width: 15em;
+  align-self: flex-start;
+  border-radius: 0.2em;
+  border: 2px solid var(--secondary-bg-color);
+  margin: 0.5em;
+  padding: 0.1em;
 }
 
 .card__title {
-  font-size:1em;
-  padding:.1em;
-  border-bottom:1px solid var(--secondary-bg-color)
+  font-size: 1em;
+  padding: 0.1em;
+  border-bottom: 1px solid var(--secondary-bg-color);
+  display:flex;
+  justify-content: space-between;
 }
 
-.card__list > ul >li {
-  color:var(--secondary-text-color)
+.card__list > ul > li {
+  color: var(--secondary-text-color);
 }
 
-
-
-
+.delete__icon{
+  height:1em;
+}
 
 @media only screen and (max-width: 680px) {
   .App {
     background: white;
-    width:100vh;
+    width: 100vh;
     display: grid;
     grid-template-columns: auto;
     grid-template-areas:
-      'header'
-      'form'
-      'lists';
+      "header"
+      "form"
+      "lists";
   }
 
   .form {
-    height:100%;
+    height: 100%;
   }
   .card__list {
-    width:100%;
+    width: 100%;
   }
-  .list-container{
-    height:100%;
+  .list-container {
+    height: 100%;
   }
 }
