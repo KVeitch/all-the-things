@@ -19,7 +19,12 @@ Go to the [live Site](https://kveitch.github.io/all-the-things/) hosted on GitHu
 <details>
   <summary>Desktop views</summary> 
 
-![](./DOCS/desktop.jpg)
+
+![](./DOCS/notitle.jpg)
+![](./DOCS/noitem.jpg)
+![](./DOCS/listitems.jpg)
+![](./DOCS/firstlist.jpg)
+![](./DOCS/lists.jpg)
 </details>
 
 <details>
