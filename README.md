@@ -1,6 +1,8 @@
 ## All-The-Things
 
-## [Live Site](https://kveitch.github.io/all-the-things/)
+## [Live Site](https://kveitch.github.io/all-the-things/)  
+
+## [Landing Page](https://kveitch.github.io/all-the-things-landing/)  
 
 All-The-Things is a quick app built for Mintbean's September hackathon, Open Hack: No Mice.  
 
