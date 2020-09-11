@@ -10,6 +10,9 @@ class Form extends Component {
       title: "",
       taskText: "",
       tasks: [],
+      isTip1Visible:true,
+      isTip2Visible:true,
+      isTip3Visible:true,
     };
   }
 
@@ -19,7 +22,11 @@ class Form extends Component {
 
   handleTitleEnter = (event) => {
     if (event.keyCode === 13) {
+      this.setState({isTip1Visible:false})
       this.listInput.focus();
+    }
+    if(event.keyCode ===9){
+      this.setState({isTip1Visible:false})
     }
   };
 
@@ -30,6 +37,9 @@ class Form extends Component {
         taskText: "",
       });
       this.listInput.focus();
+    }
+    if(event.keyCode ===9){
+      this.setState({isTip2Visible:false})
     }
   };
 
@@ -52,13 +62,17 @@ class Form extends Component {
       tasks: [],
       taskText: "",
       title: "",
+      isTip3Visible:false,
     });
     this.titleInput.focus();
   };
 
   render() {
-    const { tasks, taskText, title } = this.state;
-
+    const { tasks, taskText, title, isTip1Visible,isTip2Visible,isTip3Visible } = this.state;
+    const tip1Vis = isTip1Visible?{}:{visibility:'hidden'}
+    const tip2Vis = isTip2Visible?{}:{visibility:'hidden'}
+    const tip3Vis = isTip3Visible?{}:{visibility:'hidden'}
+    
     const formItems = tasks.map((text, i) => (
       <FormListItem text={text} key={`formItem${i}`} />
     ));
@@ -66,6 +80,7 @@ class Form extends Component {
     return (
       <div className="form">
         <p>Task Title</p>
+        
         <input
           className="form__input"
           type="text"
@@ -76,7 +91,11 @@ class Form extends Component {
           ref={(ip) => (this.titleInput = ip)}
           onChange={this.handleChange}
           onKeyDown={this.handleTitleEnter}
-        />
+          />
+          <div className="tooltip" style={tip1Vis}>
+            <span className="tooltiptext">Press enter or tab to advance to Task Items</span>
+          </div>
+ 
         <p>Task Items</p>
         <ul className="list__container">{formItems}</ul>
         <div className="input__container">
@@ -90,6 +109,9 @@ class Form extends Component {
             onChange={this.handleChange}
             onKeyDown={this.handleTaskEnter}
           />
+          <div className="tooltip" style={tip2Vis}>
+          <span className="tooltiptext">Press enter to start a new list item. Press tab to advance.</span>
+          </div>
           <img
             className="add__icon"
             src={plusIcon}
@@ -99,6 +121,9 @@ class Form extends Component {
         <button type="button" onClick={this.handleSubmit}>
           Make the thing
         </button>
+        <div className="tooltip" style={tip3Vis}>
+          <span className="tooltiptext">Press enter or space to make the list</span>
+        </div>
       </div>
     );
   }
