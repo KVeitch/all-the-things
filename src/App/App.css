@@ -61,7 +61,10 @@ header {
   grid-area: lists;
   height: calc(100vh - 4em);
   padding: 0.5em 2em 0.5em 1em;
-  background: var(--container-bg-color);
+}
+
+.container__title {
+  color: var(--secondary-text-color);
 }
 
 .add-task-btn {
@@ -83,21 +86,21 @@ ul {
   margin: 0.2em 0 0.4em;
 }
 
-.input__container{
-  display:flex;
+.input__container {
+  display: flex;
   align-items: center;
-  width:200px;
+  width: 200px;
 }
 
 .input__container > input {
   margin: 0.2em 0 0.2em;
 }
 
-.add__icon{
+.add__icon {
   position: relative;
   transform: translateX(-100%);
-  height:2em;
-  border-left:1px solid var(--header-bg-color)
+  height: 2em;
+  border-left: 1px solid var(--header-bg-color);
 }
 
 input:focus,
@@ -107,6 +110,15 @@ button:focus,
   -webkit-box-shadow: 0px 0px 0px 3px var(--highlight-color);
   -moz-box-shadow: 0px 0px 0px 3px var(--highlight-color);
   box-shadow: 0px 0px 0px 3px var(--highlight-color);
+}
+
+.card__list {
+  transition: all 0.2s ease-in-out;
+  color:var(--secondary-text-color)
+}
+
+.card__list:focus {
+  transform: scale(1.1);
 }
 
 .lists {
@@ -119,7 +131,7 @@ button:focus,
   width: 15em;
   align-self: flex-start;
   border-radius: 0.2em;
-  border: 2px solid var(--secondary-bg-color);
+  border: 2px solid var(--header-bg-color);
   margin: 0.5em;
   padding: 0.1em;
 }
@@ -127,17 +139,13 @@ button:focus,
 .card__title {
   font-size: 1em;
   padding: 0.1em;
-  border-bottom: 1px solid var(--secondary-bg-color);
-  display:flex;
+  border-bottom: 1px solid var(--header-bg-color);
+  display: flex;
   justify-content: space-between;
 }
 
-.card__list > ul > li {
-  color: var(--secondary-text-color);
-}
-
-.delete__icon{
-  height:1em;
+.delete__icon {
+  height: 1em;
 }
 
 @media only screen and (max-width: 680px) {
@@ -145,20 +153,42 @@ button:focus,
     background: white;
     width: 100vh;
     display: grid;
-    grid-template-columns: auto;
     grid-template-areas:
-      "header"
-      "form"
-      "lists";
+    "header"
+    "form"
+    "lists";
+    grid-template-columns: auto;
+    grid-template-rows: 4em 15em auto;
   }
-
+  input::placeholder{
+    text-align: center;
+  }
   .form {
     height: 100%;
   }
+
+  .form__input{
+    width:100%
+  }
+
+  .input__container {
+    width:calc(100% + 2em)
+  }
+
+  .form__input, .form > button{
+    width:100%;
+  }
+
   .card__list {
     width: 100%;
   }
   .list-container {
     height: 100%;
   }
+  .form >p {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+
 }
