@@ -1,0 +1,11 @@
+{
+  "short_name": "All The Things",
+  "name": "All The Things",
+  "icons": [
+    
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
